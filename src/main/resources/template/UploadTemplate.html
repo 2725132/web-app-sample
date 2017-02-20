@@ -5,6 +5,10 @@
 </head>
 <body ng-app="dish-app">
 	<div ng-controller="controller">
+	<input type="number" ng-model="id">
+	<button ng-click="findId(id)">Find Dish</button>
+	
+	<h1>{{url}}</h1>
 	<h1>{{dish.id}}</h1>
 	<h1>{{dish.name}}</h1>
 	<h1>{{dish.price}}</h1>
