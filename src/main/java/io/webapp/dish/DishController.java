@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -29,11 +30,15 @@ public class DishController {
 		return "adicionado!";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/{id}")
-	public Dish getDishById(@PathVariable Integer id){
-		return service.getDishById(id);
-		
+
+	
+	@RequestMapping(method=RequestMethod.GET, value="/find/{findBy}/{attribute}")
+	public List<Dish> getDish(@PathVariable String findBy , @PathVariable String attribute) throws NoSuchMethodException{
+		return service.getDish(findBy, attribute);
 	}
+	
+
+	
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/delete/{id}")
 	public String deleteDish(@PathVariable Integer id){
@@ -54,10 +59,6 @@ public class DishController {
 	}
 	
 	
-	@GetMapping("/{id}/json")
-	public Dish getDishByIdJson(@PathVariable Integer id){
-		return service.getDishById(id);
-		
-	}
+
 
 }

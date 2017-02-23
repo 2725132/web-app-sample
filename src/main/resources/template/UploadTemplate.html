@@ -7,12 +7,14 @@
 	<div ng-controller="controller">
 	<input type="number" ng-model="id">
 	<button ng-click="findId(id)">Find Dish</button>
+	<br>
+	<input type="file"  ng-model="image">
+	<button ng-click="upload(image)">Upload image</button>
 	
 	<h1>{{url}}</h1>
-	<h1>{{dish.id}}</h1>
-	<h1>{{dish.name}}</h1>
-	<h1>{{dish.price}}</h1>
+	<div>{{dish}}</div>
 	<div>{{1 * 5}}</div>
+	<div>{{reply}}</div>
 
 	</div>
 </body>

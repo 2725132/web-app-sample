@@ -19,7 +19,7 @@ public class MetadataControllerTest {
 	
 	@Test
 	public void getMethodsTest(){
-		List<Method> methods = testController.getMethods("io.webapp.dish.Dish");
-		methods.forEach(method -> System.out.println(method));
+		//List<Method> methods = testController.getMethods("io.webapp.dish.Dish");
+		//Wmethods.forEach(method -> System.out.println(method));
 	}
 }

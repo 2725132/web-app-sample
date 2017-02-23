@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,8 @@ import lombok.NonNull;
 public class Dish {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	public int id;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	public Integer id;
 	
 	@NonNull
 	public String name;
@@ -27,9 +28,14 @@ public class Dish {
 	@NonNull
 	public String type;
 	
-	public Dish(String name, String price, String type){
+	@Lob
+	@NonNull
+	public byte[] image;
+	
+	public Dish(byte[] image, String name, String price, String type ){
 		this.name = name;
 		this.price = price;
 		this.type = type;
+		this.image = image;
 	}
 }
