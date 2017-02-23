@@ -28,11 +28,6 @@ public class MetadataService extends AbstractMetadataService {
 		return methodsName;
 	}
 	
-	public void getAll(){
-		
-		return ;
-	}
-
 	public List<String> getAttributes(String className) throws ClassNotFoundException {
 		String fullClassName = directoryReader.getFullName(className);
 		Field[] fields = Class.forName(fullClassName).getDeclaredFields();
